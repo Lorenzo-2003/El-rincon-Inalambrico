@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Bienvenido al Rincon Inalambrico!</title>
+  <!--Inicio bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="JS/script.js"></script>
+  <style>
+    .navbar-custom {
+      background-color: #ba72db;
+    }
+    body {
+      background-image: url('img/Fondo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+  </style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <div class="container-fluid">
+    <img src="img/Elrincon.png" alt="Elrincon" width="80px" height="80px">
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Mangas
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Shonen</a></li>
+            <li><a class="dropdown-item" href="#">Shojo</a></li>
+            <li><a class="dropdown-item" href="#">Seinen</a></li>
+          </ul>
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Figuras
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Pokemon</a></li>
+            <li><a class="dropdown-item" href="#">Yu-Gi-Oh</a></li>
+            <li><a class="dropdown-item" href="#">Dark Souls</a></li>
+          </ul>
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Consolas
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">PlayStation5</a></li>
+            <li><a class="dropdown-item" href="#">Xbox Series</a></li>
+            <li><a class="dropdown-item" href="#">Switch 2</a></li>
+          </ul>
+            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Cartas
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Pokemon</a></li>
+            <li><a class="dropdown-item" href="#">Mitos Y leyendas</a></li>
+            <li><a class="dropdown-item" href="#">Yu-Gi-Oh</a></li> 
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            iniciar sesion
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+            <li><a class="dropdown-item" href="login.html">Iniciar Sesion</a></li>
+            <li><a class="dropdown-item" href="#">Registrarse</a></li>
+          </ul>
+        </li>
+      </ul>"
+    </div>
+  </div>
+</nav>
+
+
+<div class="container my-5 d-flex justify-content-center">
+  <div id="carousel-menu" class="d-flex align-items-center">
+    <button id="left-arrow" class="btn btn-dark me-3">&#8592;</button>
+    <div class="carousel-images d-flex align-items-center">
+      <img id="left-img" src="img/Cartas.jpg" class="carousel-img small-img" alt="Left">
+      <img id="center-img" src="img/consolas.png" class="carousel-img center-img" alt="Center">
+      <img id="right-img" src="img/Naruto.jpg" class="carousel-img small-img" alt="Right">
+    </div>
+    <button id="right-arrow" class="btn btn-dark ms-3">&#8594;</button>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="img/cartasPkm.jpg" alt="CartasPkm">
+        <div class="card-header bg-primary text-white">
+          Cartas Brecha Paradojica
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">$12.000</h2>
+          <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">1 Paquete</li>
+            <li class="list-group-item">Envio dentro de las 24 horas</li>
+            <li class="list-group-item">Kit Basico</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Agregar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="img/jujutsuKaisen.jpg" alt="jujutsu Kaisen">
+        <div class="card-header bg-success text-white">
+          Manga Jujutsu Kaisen Volumen 2
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">$14.000</h2>
+          <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">192 paginas </li>
+            <li class="list-group-item">Envio dentro de 2 dias</li>
+            <li class="list-group-item">5 Disponibles</li>
+          </ul>
+          <a href="#" class="btn btn-success">Agregar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="img/XboxX.png" alt="Xbox Series X">
+        <div class="card-header bg-warning text-white">
+          Xbox Series X
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">$300.000</h2>
+          <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">Membresia incluida</li>
+            <li class="list-group-item">Envio dentro de las 24 horas</li>
+            <li class="list-group-item">membresia Xbox 2 meses</li>
+          </ul>
+          <a href="#" class="btn btn-warning">Agregar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="index.html">
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Inicio Sesion</title>
+    <style>
+        body {
+            background-color: #a957cf;
+        }
+    </style>
+
+
+    <!--Inicio script-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#error").hide();
+            $("#errorNombre").hide();
+            $("#nombre").focusout(function () {
+                if ($("#nombre").val().trim().length == 0) {
+                    mensaje = "La contraseña está en blanco";
+                    $("#errorNombre").html(mensaje);
+                    $("#errorNombre").show();
+                }
+            });
+            $("#formulario").submit(function () {
+                msg = "";
+                if ($("#nombre").val().trim().length == 0) {
+                    msg = "Contraseña invalida";
+                    $("#errorNombre").html(msg);
+                    $("#errorNombre").show();
+                }
+                if ($("#email").val().trim().length == 0) {
+                    msg = msg + " El email está en blanco"
+                }
+                if (msg != "") {
+                    $("#error").html(msg);
+                    $("#error").show();
+                    event.preventDefault();
+                }
+
+            });
+        });
+    </script>
+    <!--Fin script-->
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="img/logoRincon.webp" alt="logo" width="200" height="200">
+        <h1>Rincon Inalambrico</h1>
+        <h2>Login:</h2>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+<form action="otraPage.html" method="post" id="formulario">
+    <!-- Email -->
+    <div class="row mb-3">
+        <div class="col-md-6 mx-auto">
+            <label for="email" class="form-label d-block text-center">Email</label>
+            <input type="email" name="email" id="email" class="form-control">
+        </div>
+    </div>
+
+    <!--Contraseña-->
+<div class="row mb-3">
+    <div class="col-md-6 mx-auto">
+        <label for="contrasena" class="form-label d-block text-center">Contraseña</label>
+        <div class="input-group">
+            <input type="password" name="contrasena" id="contrasena" class="form-control">
+            <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                ❌
+            </button>
+        </div>
+        <div id="errorContrasena" class="alert alert-danger mt-2 d-none" role="alert"></div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#togglePassword").click(function () {
+            let input = $("#contrasena");
+            let type = input.attr("type") === "password" ? "text" : "password";
+            input.attr("type", type);
+
+            // Cambiar icono según estado
+            $(this).text(type === "password" ? "❌" : "⬜");
+        });
+    });
+</script>
+
+    <!-- Los botones -->
+    <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+            <input type="submit" class="btn btn-danger me-2" id="enviar" value="Enviar">
+            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+            <input type="button" class= "btn btn-outline-secondary "value = "Registrarse">
+            <div id="error" class="alert alert-danger mt-3 d-none" role="alert"></div>
+        </div>
+    </div>
+</form>
+        </div>
+    </div>
+    <div>
+        <a href="index.html">
+            <img src="img/boton retornar.png" alt="retorno" width="50" height="50"
+                style="position: fixed; bottom: 10px; left: 10px; cursor: pointer;">
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
