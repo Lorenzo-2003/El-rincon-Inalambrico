@@ -15,53 +15,53 @@
 
 
     <!--Inicio script-->
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#error").hide();
-        $("#errorContrasena").hide();
-        $("#errorEmail").hide();
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#error").hide();
+            $("#errorContrasena").hide();
+            $("#errorEmail").hide();
 
-        // Validar email con regex
-        function validarEmail(email) {
-            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return regex.test(email);
+            // Validar email con regex
+            function validarEmail(email) {
+                let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
 
-        }
-        if (window.location.href.indexOf("error=1") > -1) {
-            $("#error").html("Usuario o contraseña incorrectos").show();
-        }
-        $("#formulario").submit(function (event) {
-            let msg = "";
-
-            // Contraseña vacía
-            if ($("#contrasena").val().trim().length == 0) {
-                msg = "Contraseña inválida";
-                $("#errorContrasena").html(msg).show();
-                
             }
-
-            // Email vacío o inválido
-            let email = $("#email").val().trim();
-            if (email.length == 0) {
-                msg += " El email está en blanco.";
-                $("#errorEmail").html("El email está en blanco").show();
-            } else if (!validarEmail(email)) {
-                msg += " Requiere tener formato Email con @.";
-                $("#errorEmail").html("Requiere tener formato Email con @").show();
-            } else {
-                $("#errorEmail").hide();
+            if (window.location.href.indexOf("error=1") > -1) {
+                $("#error").html("Usuario o contraseña incorrectos").show();
             }
-            if (msg.length > 0) {
-                event.preventDefault();
-                $("#error").html(msg).show();
-            } else {
-                $("#error").hide();
-            }
+            $("#formulario").submit(function (event) {
+                let msg = "";
+
+                // Contraseña vacía
+                if ($("#contrasena").val().trim().length == 0) {
+                    msg = "Contraseña inválida";
+                    $("#errorContrasena").html(msg).show();
+
+                }
+
+                // Email vacío o inválido
+                let email = $("#email").val().trim();
+                if (email.length == 0) {
+                    msg += " El email está en blanco.";
+                    $("#errorEmail").html("El email está en blanco").show();
+                } else if (!validarEmail(email)) {
+                    msg += " Requiere tener formato Email con @.";
+                    $("#errorEmail").html("Requiere tener formato Email con @").show();
+                } else {
+                    $("#errorEmail").hide();
+                }
+                if (msg.length > 0) {
+                    event.preventDefault();
+                    $("#error").html(msg).show();
+                } else {
+                    $("#error").hide();
+                }
 
 
+            });
         });
-    });
-</script>
+    </script>
 
     <!--Fin script-->
 </head>
@@ -117,7 +117,10 @@
                         <input type="submit" class="btn btn-danger me-2" id="enviar" value="Enviar">
                         <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
                         <input type="button" class="btn btn-outline-secondary " value="Registrarse">
-                        <div id="error" class="alert alert-danger mt-3" role="alert"></div>
+                        <div class="alerta">
+                            <div id="error" class="alert alert-danger mt-3" role="alert">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -125,7 +128,6 @@
     </div>
     </div>
     </div>
-    <!-- ...existing code... -->
     <!--Boton retorno-->
     <div>
         <a href="index.html">

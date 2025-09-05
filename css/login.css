@@ -90,4 +90,16 @@ form .email span, form .contrasena span{
     transition: .5s;
     pointer-events: none;
     transform: scaleX(0);
+
 }
+
+.alerta {
+    
+    margin-top: -10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    
+}   
+
