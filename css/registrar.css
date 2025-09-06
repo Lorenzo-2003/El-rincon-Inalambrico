@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: linear-gradient(150deg, #aa2ecf, #0feee3c7);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.registro-formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+ }
+
+ .registro-formulario h4{
+   
+    font-size: 22px;
+    margin-bottom: 20px;
+ }
+
+ form .nombre, form .contrasena, form .apellido, form .telefono, form .contrasena2, form .email{
+    position: relative;
+    margin: 20px 0;
+    left: 10%;   
+}
+form .contrasena2{
+    margin: 30px 0;
+    left: 5px;
+}
+form .registrar{
+   margin: 30px 0;
+   position: relative;
+   left: 20%;
+}
+
+
