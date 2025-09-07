@@ -65,15 +65,24 @@
     </script>
 
     <!--Fin script-->
+    <!--Para hacer la barra de desplazamiento-->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: montserrat;
+            background: linear-gradient(150deg, #aa2ecf, #0feee3c7);
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ...existing code... -->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="bg-white rounded shadow p-4">
-                    <!-- Aquí va TODO tu formulario y títulos -->
                     <div style="text-align: center;">
                         <img src="img/logoRincon.webp" alt="logo" width="200" height="200">
                         <h1>Rincon Inalambrico</h1>
@@ -86,7 +95,6 @@
                             <label for="email">Email</label>
                             <span></span>
                         </div>
-
 
                         <!-- Contraseña -->
                         <div class="contrasena">
@@ -115,7 +123,7 @@
             <form>
                 <div class="row">
                     <div class="col-md-12 text-center">
-                            <input type="submit" class="btn btn-danger me-2" id="enviar" value="Acceder">
+                        <input type="submit" class="btn btn-danger me-2" id="enviar" value="Acceder">
                         <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
                         <a href="registrar.html">
                             <input type="button" class="btn btn-outline-secondary " value="Registrarse">

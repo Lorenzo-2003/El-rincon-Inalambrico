@@ -1,3 +1,5 @@
+
+
 const email = document.getElementById('email').value.trim;
 const password = document.getElementById('password').value.trim;
 
@@ -12,3 +14,5 @@ if(email === usuario.email && password === usuario.password){
     alert('Inicio de sesion exitoso');
     window.location.href = 'menu2.html';
 }
+
+
