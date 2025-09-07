@@ -66,13 +66,17 @@
                 <input type="text" id="codigo-postal" placeholder="Código postal">
             </div>
         </div>
-
-        <div class="submit">
-            <a href="menu2.html">
-                <button class="btn" onclick="validateForm()">Crear Cuenta</button>
+        <!-- ...existing code... -->
+        <form onsubmit="return validateForm()" action="index.html">
+            <div class="form-container">
+            </div>
+            <div class="submit">
+                <button class="btn" type="submit">Crear Cuenta</button>
                 <p class="warnings" id="warnings"></p>
-            </a>
-        </div>
+            </div>
+        </form>
+        <!-- ...existing code... -->
+
 
         <div class="footer">
             ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
@@ -95,6 +99,11 @@
             const telefono = document.getElementById('telefono').value.trim();
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
+            const direccion = document.getElementById('direccion').value.trim();
+            const ciudad = document.getElementById('ciudad').value.trim();
+            const codigo = document.getElementById('codigo-postal').value.trim();
+
+            const btn = document.getElementById('btn');
 
             // Mostrar advertencia
             const warningsElement = document.getElementById('warnings');
@@ -110,23 +119,28 @@
                 if (!telefono) document.getElementById('telefono').classList.add('error-input');
                 if (!password) document.getElementById('password').classList.add('error-input');
                 if (!confirmPassword) document.getElementById('confirm-password').classList.add('error-input');
+                if (!direccion) document.getElementById('direccion').classList.add('error-input');
+                if (!ciudad) document.getElementById('ciudad').classList.add('error-input');
+                if (!codigo) document.getElementById('codigo-postal').classList.add('error-input');
 
                 return false;
-            }
 
-            // Validar formato de email
-            if (!email.includes('@')) {
+
+                // Validar formato de email
+            } else if (!email.includes('@')) {
                 warningsElement.textContent = "Por favor, ingrese un email válido (debe contener @)";
                 document.getElementById('email').classList.add('error-input');
                 return false;
-            }
 
-            // validar que las contraseñas sean las mismas
-            if (password !== confirmPassword) {
+
+                // validar que las contraseñas sean las mismas
+            } else if (password !== confirmPassword) {
                 warningsElement.textContent = "Las contraseñas no coinciden";
                 document.getElementById('password').classList.add('error-input');
                 document.getElementById('confirm-password').classList.add('error-input');
                 return false;
+            } else {
+                var valido = true;
             }
 
 
@@ -147,7 +161,6 @@
             // Si no encuentra errores
             warningsElement.textContent = "";
             alert("¡Cuenta creada con éxito! Será redirigido a la página de inicio.");
-
             window.location.href = "index.html";
             // Aquí normalmente redirigirías o enviarías el formulario
             // window.location.href = "index.html";
