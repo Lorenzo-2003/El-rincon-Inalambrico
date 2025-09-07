@@ -103,3 +103,10 @@ form .email span, form .contrasena span{
     
 }   
 
+@media screen and (max-width: 600px){
+    .formulario{
+        width: 80%;
+    }
+    
+}
+

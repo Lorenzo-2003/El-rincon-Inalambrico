@@ -1,96 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear cuenta</title>
+    <title>Rincón Inalámbrico - Crear Cuenta</title>
     <link rel="stylesheet" href="css/registrar.css">
-
-    <link rel="stylesheet" href="js/registrar.js">
-
-
 </head>
 
 <body>
+    <div class="container" id="container">
+        <div class="header">
+            <img src="img/logoRincon.webp" alt="Logo Rincón Inalámbrico" class="logo"
+                style="width: 280px; height: 280px;">
+            <h1>Rincón Inalámbrico</h1>
+            <p>Crear cuenta</p>
+        </div>
 
-    <div class="registro-formulario">
-        <img src="img/logoRincon.webp" alt="logo" width="200" height="200" style="display: block; margin: auto;">
-        <h1>
-            <center>Formulario para crear cuenta</center>
-        </h1>
-
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="bg-white rounded shadow p-4">
-                    <!-- Aquí va TODO tu formulario y títulos -->
-                    <form action="otraPage.html" method="post" id="formulario">
-                        <!-- Nombre -->
-                        <div class="nombre">
-                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder=" " required>
-                            <label for="nombre">Nombre</label>
-                            <span></span>
-                        </div>
-                        <!-- Apellido -->
-                        <div class="apellido">
-                            <input type="text" name="apellido" id="apellido" class="form-control" placeholder=" "
-                                required>
-                            <label for="apellido">Apellido</label>
-                            <span></span>
-                        </div>
-                        <!-- Email -->
-                        <div class="email">
-                            <input type="text" name="email" id="email" class="form-control" placeholder=" " required>
-                            <label for="email">Email</label>
-                            <span></span>
-                        </div>
-
-
-                        <!-- Contraseña -->
-                        <div class="contrasena">
-                            <input type="password" name="contrasena" id="contrasena" class="form-control" required>
-                            <label for="contrasena">Contraseña</label>
-                            <span></span>
-                            <button type="button" class="btn btn-outline-secondary" id="togglePassword">❌</button>
-                        </div>
-                        <div class="contrasena2">
-                            <input type="password" name="contrasena2" id="contrasena2" class="form-control" required>
-                            <label for="contrasena2">Repetir Contraseña</label>
-                            <span></span>
-                            <button type="button" class="btn btn-outline-secondary" id="togglePassword2">❌</button>
-
-                        </div>
-
-                        <script>
-                            $(document).ready(function () {
-                                $("#togglePassword").click(function () {
-                                    let input = $("#contrasena");
-                                    let type = input.attr("type") === "password" ? "text" : "password";
-                                    input.attr("type", type);
-
-                                    // Cambiar icono según estado
-                                    $(this).text(type === "password" ? "❌" : "⬜");
-                                });
-                            });
-                        </script>
-                        <div id="errorContrasena" class="alert alert-danger" role="alert"></div>
-                </div>
+        <div class="form-container">
+            <!--Nombre-->
+            <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" placeholder="Ingresa tu nombre">
             </div>
-            <!-- Los botones -->
-            <form>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <input type="submit" class="btn btn-danger me-2" id="enviar" value="Enviar">
-                        <div class="alerta">
-                            <div id="error" class="alert alert-danger mt-3" role="alert">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+
+            <!--Apellido-->
+            <div class="form-group">
+                <label for="apellido">Apellido *</label>
+                <input type="text" id="apellido" placeholder="Ingresa tu apellido">
+            </div>
+
+            <!--Email-->
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+            </div>
+            <!--Teléfono-->
+            <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" placeholder="+56 9 1234 5678">
+            </div>
+            <!--Contraseña-->
+            <div class="form-group">
+                <label for="password">Contraseña *</label>
+                <input type="password" id="password" placeholder="Crea una contraseña segura">
+            </div>
+            <!--Confirmar Contraseña-->
+            <div class="form-group">
+                <label for="confirm-password">Confirmar Contraseña *</label>
+                <input type="password" id="confirm-password" placeholder="Repite tu contraseña">
+            </div>
+            <!--Dirección-->
+            <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" placeholder="Tu dirección completa">
+            </div>
+            <!--Ciudad y Código Postal-->
+            <div class="form-group">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" placeholder="Ciudad de residencia">
+            </div>
+            <!--Codigo Postal-->
+            <div class="form-group">
+                <label for="codigo-postal">Código Postal</label>
+                <input type="text" id="codigo-postal" placeholder="Código postal">
+            </div>
+        </div>
+
+        <div class="submit">
+            <a href="menu2.html">
+                <button class="btn" onclick="validateForm()">Crear Cuenta</button>
+                <p class="warnings" id="warnings"></p>
+            </a>
+        </div>
+
+        <div class="footer">
+            ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
         </div>
     </div>
-
     <!--Boton retorno-->
     <div>
         <a href="index.html">
@@ -98,9 +85,85 @@
                 style="position: fixed; bottom: 10px; left: 10px; cursor: pointer;">
         </a>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+
+    <script>
+
+        function validateForm() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const apellido = document.getElementById('apellido').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Mostrar advertencia
+            const warningsElement = document.getElementById('warnings');
+
+            // Validar que no esten vacios
+            if (!nombre || !apellido || !email || !telefono || !password || !confirmPassword) {
+                warningsElement.textContent = "Por favor, complete todos los campos obligatorios marcados con *";
+
+                // Resaltar campos vacíos
+                if (!nombre) document.getElementById('nombre').classList.add('error-input');
+                if (!apellido) document.getElementById('apellido').classList.add('error-input');
+                if (!email) document.getElementById('email').classList.add('error-input');
+                if (!telefono) document.getElementById('telefono').classList.add('error-input');
+                if (!password) document.getElementById('password').classList.add('error-input');
+                if (!confirmPassword) document.getElementById('confirm-password').classList.add('error-input');
+
+                return false;
+            }
+
+            // Validar formato de email
+            if (!email.includes('@')) {
+                warningsElement.textContent = "Por favor, ingrese un email válido (debe contener @)";
+                document.getElementById('email').classList.add('error-input');
+                return false;
+            }
+
+            // validar que las contraseñas sean las mismas
+            if (password !== confirmPassword) {
+                warningsElement.textContent = "Las contraseñas no coinciden";
+                document.getElementById('password').classList.add('error-input');
+                document.getElementById('confirm-password').classList.add('error-input');
+                return false;
+            }
+
+
+            // Validar longitud de contraseña
+            if (password.length < 6) {
+                warningsElement.textContent = "La contraseña debe tener al menos 6 caracteres";
+                document.getElementById('password').classList.add('error-input');
+                document.getElementById('confirm-password').classList.add('error-input');
+                return false;
+            }
+
+
+            if (valido) {
+                System.out.println("Es válido");
+            } else {
+                System.out.println("Es inválido");
+            }
+            // Si no encuentra errores
+            warningsElement.textContent = "";
+            alert("¡Cuenta creada con éxito! Será redirigido a la página de inicio.");
+
+            window.location.href = "index.html";
+            // Aquí normalmente redirigirías o enviarías el formulario
+            // window.location.href = "index.html";
+
+            return true;
+        }
+
+        // Quitar el estilo de error cuando el usuario comience a escribir
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', function () {
+                this.classList.remove('error-input');
+                document.getElementById('warnings').textContent = "";
+            });
+        });
+    </script>
 </body>
 
 </html>
