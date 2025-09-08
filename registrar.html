@@ -35,7 +35,7 @@
                 <label for="email">Email *</label>
                 <input type="email" id="email" placeholder="example@gmail.com">
             </div>
-            <!--Teléfono-->
+            <!--Telefono-->
             <div class="form-group">
                 <label for="telefono">Teléfono *</label>
                 <input type="tel" id="telefono" placeholder="+56 9 1234 5678">
@@ -66,7 +66,6 @@
                 <input type="text" id="codigo-postal" placeholder="Código postal">
             </div>
         </div>
-        <!-- ...existing code... -->
         <form onsubmit="return validateForm()" action="index.html">
             <div class="form-container">
             </div>
@@ -75,7 +74,6 @@
                 <p class="warnings" id="warnings"></p>
             </div>
         </form>
-        <!-- ...existing code... -->
 
 
         <div class="footer">
@@ -91,7 +89,8 @@
     </div>
 
     <script>
-
+        // funcion para validar formulario
+   
         function validateForm() {
             const nombre = document.getElementById('nombre').value.trim();
             const apellido = document.getElementById('apellido').value.trim();
@@ -102,7 +101,7 @@
             const direccion = document.getElementById('direccion').value.trim();
             const ciudad = document.getElementById('ciudad').value.trim();
             const codigo = document.getElementById('codigo-postal').value.trim();
-
+            
             const btn = document.getElementById('btn');
 
             // Mostrar advertencia
@@ -143,7 +142,6 @@
                 var valido = true;
             }
 
-
             // Validar longitud de contraseña
             if (password.length < 6) {
                 warningsElement.textContent = "La contraseña debe tener al menos 6 caracteres";
@@ -152,7 +150,32 @@
                 return false;
             }
 
+            //Para validar que el telefono no sea un String
+            function esNumerico(dato) {
+                return /^\d+$/.test(dato); 
+            }  
 
+            let telefonoSinEspacios = telefono.replace(/\s+/g, '');
+            if (!esNumerico(telefonoSinEspacios)) {
+                warningsElement.textContent = "El teléfono debe contener solo números";
+                document.getElementById('telefono').classList.add('error-input');
+                return false;
+            }
+            //para validar longitud de telefono
+            if (telefonoSinEspacios.length > 8|| telefonoSinEspacios.length < 8) {
+                warningsElement.textContent = "El teléfono debe tener entre 8 dígitos";
+                document.getElementById('telefono').classList.add('error-input');
+                return false;
+            }
+
+            //Para validar codigo postal
+            let codigoSinEspacios = codigo.replace(/\s+/g, '');
+            if (codigo && !esNumerico(codigoSinEspacios)) {
+                warningsElement.textContent = "El código postal debe contener solo números";
+                document.getElementById('codigo-postal').classList.add('error-input');
+                return false;
+            }
+            
             if (valido) {
                 System.out.println("Es válido");
             } else {
